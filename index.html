@@ -1,93 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+ 
+  <title>Photography</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #777;
+  }
+  h3, h4 {
+      margin: 10px 0 30px 0;
+      letter-spacing: 10px;
+      font-size: 20px;
+      color: #111;
+  }
+  .container {
+      padding: 80px 120px;
+  }
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .person:hover {
+      border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+      -webkit-filter: grayscale(90%);
+      filter: grayscale(90%); /* make all photos black and white */
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+      background: #2d2d30;
+      color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+  }
+  .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+  .modal-header, h4, .close {
+      background-color: #333;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 40px 50px;
+  }
+  .nav-tabs li a {
+      color: #777;
+  }
+  #googleMap {
+      width: 100%;
+      height: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+  }
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #837E7C;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+  }
+  .narvar-brand{
+    color:#000000; 
+  }
+   .navbar li a, .navbar .navbar-brand {
+      color: #d5d5d5 !important;
+      font-size: 13px;
+  }
+ .navbar-nav li a:hover {
+      color: #fff !important;
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+      color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+      background-color: red !important;
+  }
+  footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
+      resize: none;
+  }
+  .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top:20px;
+}
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+.gallery-item {
+  margin: 20px;
+  border: 5px solid #fff;
+  
+}
 
-    <title>Photography</title>
+.gallery-item .thumbnail {
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Theme CSS -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+  </style>
 </head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<body id="page-top" class="index">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#myPage">LIFE THROUGH LENS</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#myPage">HOME</a></li>
+        <li class="page scroll"><a href="#band">ABOUT US</a></li>
+        <li class="page scroll"><a href="#tour">GALLERY</a></li>
+        <li class="page scroll"><a href="#contact">CONTACT</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Tips</a></li>
+            <li><a href="#">Extras</a></li>
+            <li><a href="#">Media</a></li>
+          </ul>
+        </li>
 
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#page-top">Let's Capture Every Moment</a>
-            </div>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Gallery</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a style="background-color: #333" href="#about">About</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
-                     <li class="page-scroll">
-                        <a href="#tips">Tips</a>
-                    </li>
-                  
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+      <figure class="gallery-item">
+        <img class="thumbnail" src="http://abrukstusphoto.com/wp-content/uploads/2016/05/Photography.jpeg" width="1200" height="700">
+        </figure>
+        <div class="carousel-caption">
+          <h3 style="text-align: center;"></h3>
+          <p></p>
         </div>
-        <!-- /.container-fluid -->
-    </nav>
+      </div>
 
-    <!-- Header -->
-<header style="background-color: #333">
-    <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive" src="https://github.com/meolanonales/website.github.io/blob/master/img/download%20(1).jpg" alt="">
-                    <div class="intro-text">
-                        <span class="name">Photography</span>
-                        <hr class="star-light">
-                        <span class="skills">LIFE THROUGH LENS</span>
-                    </div>
-                </div>
-            </div>
+      <div class="item">
+      <figure class="gallery-item" ></figure>>
+        <img class="thumbnail" src="https://iso.500px.com/wp-content/uploads/2016/03/pedroquintela.jpg" alt="Chicago" width="1200" height="700">
+        </figure>
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
         </div>
-    </header>
+      </div>
+    
+      <div class="item">
+        <img src="la.jpg" alt="Los Angeles" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
 
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Container (ABOUT US) -->
+<div id="band" class="container text-center">
+  <h3>BEHIND THE LENS</h3>
+  <p><em>"You don't take a photograpgh, you make it."</em></p>
+  <p>Photography is a way of feeling, of touching, of loving.What you have caught on film is captured forever... it remember little things, long after forgotten everything.Thats  why we love photograph it simply because you preserved moment or should I say memories . Honestly, my photos are not good as yours but my point here is not what it looks but on how I captured it. Because every photo that I took has a story behind. By the way Gerilyn Abella Desamito and Meola Nonales the persons behind the lens.
+</p>
+  <br>
+<!-- Container (GALLERY section) -->
+   <section id="tour">
         <div class="gallery">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -103,7 +279,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="https://static.wixstatic.com/media/f471e8_bceb78dbe3c84a519484a812a8a05dcb.jpg/v1/fill/w_875,h_539,al_c,q_85,usm_0.66_1.00_0.01/f471e8_bceb78dbe3c84a519484a812a8a05dcb.jpg" class="img-responsive" alt=""  height="333" width="400">
+                        <img src="https://static.wixstatic.com/media/f471e8_bceb78dbe3c84a519484a812a8a05dcb.jpg/v1/fill/w_875,h_539,al_c,q_85,usm_0.66_1.00_0.01/f471e8_bceb78dbe3c84a519484a812a8a05dcb.jpg" class="img-responsive" alt="">
                         <h1><strong>GALLERY</strong></h1></a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -113,7 +289,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="https://static.wixstatic.com/media/f471e8_e740812dfc12454881be9d19c309d8aa.jpg/v1/fill/w_875,h_539,al_c,q_85,usm_0.66_1.00_0.01/f471e8_e740812dfc12454881be9d19c309d8aa.jpg" class="img-responsive" alt=""  height="333" width="400">
+                        <img src="https://static.wixstatic.com/media/f471e8_e740812dfc12454881be9d19c309d8aa.jpg/v1/fill/w_875,h_539,al_c,q_85,usm_0.66_1.00_0.01/f471e8_e740812dfc12454881be9d19c309d8aa.jpg" class="img-responsive" alt="">
                         <h1 style="text-align;center"><strong>NATURE</strong></h1></a>
                 </div>
   <div class="col-sm-4 portfolio-item">
@@ -123,50 +299,30 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-      <img src="https://static.wixstatic.com/media/f471e8_632096f35c2a476c97dcbb360423e81b.jpg/v1/fill/w_875,h_539,al_c,q_85,usm_0.66_1.00_0.01/f471e8_632096f35c2a476c97dcbb360423e81b.jpg" class="img-responsive" alt=""  height="333" width="400">
+      <img src="https://static.wixstatic.com/media/f471e8_632096f35c2a476c97dcbb360423e81b.jpg/v1/fill/w_875,h_539,al_c,q_85,usm_0.66_1.00_0.01/f471e8_632096f35c2a476c97dcbb360423e81b.jpg" class="img-responsive" alt="">
      <h1 style="text-align;center"><strong>Moments</strong></h1></a>
                 </div>
-          
-            </div>  </div>
-    </section>
-    
-     
-   
-
-    <!-- About Section -->
-    <section class="success" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About</h2>
-                    <hr class="star-light">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                     <h3>BEHIND THE LENS</h3>
-                <p><em>"You don't take a photograpgh, you make it."</em></p>                </div>
-                <div class="col-lg-4">
-                    <p>Photography is a way of feeling, of touching, of loving.What you have caught on film is captured forever... 
-                        it remember little things, long after forgotten everything.Thats  why we love photograph it simply because you
-                        preserved moment or should I say memories . Honestly, my photos are not good as yours but my point here is not what
-                        it looks but on how I captured it. Because every photo that I took has a story behind. 
-                        By the way Gerilyn Abella Desamito and Meola Nonales the persons behind the lens.
-</p>
-                </div>
                
-            </div>
-        </div>
+            </div></div>
     </section>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
 
-    <!-- Contact Section -->
-    <div id="contact" class="container">
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container">
   <h3 class="text-center">Contact us</h3>
   <div class="row">
     <div class="col-md-4">
       <p><span class="glyphicon glyphicon-map-marker"></span>Baguio City, PH</p>
       <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span>Email: gerilynabelladesamito@gmail.com<br>  meolanonales@gmail.com</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>Email: gerilynabelladesamito@gmail.com<br>      meolanonales@gmail.com></p>
+    </div>
     <div class="col-md-8">
       <div class="row">
         <div class="col-sm-6 form-group">
@@ -186,38 +342,15 @@
     </div>
   </div>
   </div>
-        
-           <section class="success" id="tips">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Tips for Taking Your Photos</h2>
-                    <hr class="star-light">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                     
-                    <p><em>"Decide how much of the background you want"</em></p>  
-                 <p><em>"Avoid mergers."</em></p>
-                <p><em>"Be careful not to crop out body parts"</em></p>
-                <p><em>"Try changing the distance from the subject"</em></p>
-                <p><em>"Try different angles"</em></p></div>
-               
-                        
-            </div>
-        </div>
-    </section>
+</div>
 
 
-
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="footer-above">
+<!-- Footer -->
+ <footer class="text-center">
+        <div class="footer-below">
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
@@ -235,7 +368,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-below">
+        <div class="footer-above">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -247,15 +380,45 @@
         </div>
     </footer>
 
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Made By <a href="http://www.w3schools.com" data-toggle="tooltip" title="Visit " Gee &Mulay</a></p>
+</footer>
 
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip();
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
     <!-- Portfolio Modals -->
-     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -452,23 +615,5 @@
         </div>
     </div>
 
-
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/freelancer.min.js"></script>
-
 </body>
-
 </html>
