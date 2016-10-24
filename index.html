@@ -137,7 +137,22 @@
   .dropdown-menu li a:hover {
       background-color: red !important;
   }
-   textarea {
+  footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
       resize: none;
   }
   .gallery {
@@ -331,12 +346,11 @@
 
 
 <!-- Footer -->
-      <footer class="text-center">
-        <div class="footer-above">
+ <footer class="text-center">
+        <div class="footer-below">
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
@@ -354,7 +368,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-below">
+        <div class="footer-above">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -365,6 +379,44 @@
             </div>
         </div>
     </footer>
+
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Made By <a href="http://www.w3schools.com" data-toggle="tooltip" title="Visit " Gee &Mulay</a></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip();
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
     <!-- Portfolio Modals -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
@@ -396,7 +448,7 @@
       <figure class="gallery-item">
         <img class="thumbnail" src="http://s4.favim.com/orig/50/beautiful-black-and-white-here-comes-the-sun-music-photography-Favim.com-457311.jpg" height="333" width="400">
       </figure>
-                                  <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
     </div>
       </div>
     </div>
